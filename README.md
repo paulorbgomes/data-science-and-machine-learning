@@ -1,2 +1,2 @@
-# Data-Science-and-Machine-Learning
+# data-science-and-machine-learning
  Estudos sobre Data Science e Machine Learning em python.
