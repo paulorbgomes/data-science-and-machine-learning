@@ -1,0 +1,10 @@
+# Método do Cotovelo
+sqg = []
+for i in range(1,8):
+  kmeans = KMeans(i)
+  kmeans.fit(x)
+  sqg.append(kmeans.inertia_)
+
+plt.plot(range(1,8), sqg)
+plt.xlabel("Cluster [K]")
+plt.ylabel("SQG(K)")

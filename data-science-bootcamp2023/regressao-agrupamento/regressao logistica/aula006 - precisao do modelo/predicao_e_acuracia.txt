@@ -1,0 +1,45 @@
+# Bibliotecas
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+import seaborn as sns
+sns.set()
+
+from scipy import stats
+stats.chisqprob = lambda chisq, df: stats.chi2.sf(chisq, df)
+
+# Dados
+raw_data = pd.read_csv("2.02. Binary predictors.csv")
+raw_data
+data = raw_data.copy()
+data["Admitted"] = data["Admitted"].map({"Yes":1, "No":0})
+data["Gender"] = data["Gender"].map({"Female":1, "Male":0})
+data
+
+# Declaração das Variáveis Dependentes e Independentes
+y = data["Admitted"]
+x1 = data[["SAT","Gender"]]
+
+# Regressão Logística
+x = sm.add_constant(x1)
+results = sm.Logit(y,x).fit()
+results.summary()
+
+# Predição e Acurácia do Modelo
+np.set_printoptions(formatter={"float": lambda x: "{0:0.2f}".format(x)})
+results.predict()
+
+np.array(data["Admitted"])
+results.pred_table()
+
+# Matriz de Confusão
+cm_df = pd.DataFrame(results.pred_table())
+cm_df.columns = ["Predicted 0", "Predicted 1"]
+cm_df = cm_df.rename(index={0:"Actual 0", 1:"Actual 1"})
+cm_df
+
+# Cálculo da Precisão a Partir da Matriz de Confusão
+cm = np.array(cm_df)
+accuracy_train = (cm[0,0] + cm[1,1]) / cm.sum()
+accuracy_train

@@ -1,0 +1,43 @@
+# Bibliotecas
+import numpy as np
+import matplotlib.pyplot as plt
+import tensorflow as tf
+print(tf.__version__)
+
+# Geração dos Dados
+# Dados ...
+observations = 1000
+xs = np.random.uniform(-10, 10, (observations, 1))
+zs = np.random.uniform(-10, 10, (observations, 1))
+generated_inputs = np.column_stack((xs, zs))
+noise = np.random.uniform(-1, 1, (observations, 1))
+generated_targets = 2*xs + 3*zs + 5 + noise
+np.savez("TF_intro", inputs=generated_inputs, targets=generated_targets)
+
+# Solução Usando TensorFlow
+training_data = np.load("TF_intro.npz")
+input_size = 2
+output_size = 1
+
+# Modelo ...
+model = tf.keras.Sequential([
+                            tf.keras.layers.Dense(output_size)
+                            ])
+
+# Função Objetiva e Algoritmo de Otimização ...
+model.compile(optimizer="sgd", loss="mean_squared_error")
+
+model.fit(training_data["inputs"], training_data["targets"], epochs=200, verbose=2)
+
+# Verificação do Modelo Após o Treinamento
+model.layers[0].get_weights()
+weights = model.layers[0].get_weights()[0]
+bias = model.layers[0].get_weights()[1]
+print(f"weights: {weights}")
+print(f"bias: {bias}")
+
+# Predição
+plt.plot(np.squeeze(model.predict_on_batch(training_data["inputs"])), np.squeeze(training_data["targets"]))
+plt.xlabel("inputs", fontsize=20)
+plt.ylabel("targets", fontsize=20)
+plt.show()
