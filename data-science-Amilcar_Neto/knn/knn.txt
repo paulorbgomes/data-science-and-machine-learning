@@ -1,0 +1,34 @@
+# Bibliotecas
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix, accuracy_score
+
+# Dataset
+dataset = pd.read_csv("bank_note.csv")
+#print(dataset.shape)
+#print(dataset.head())
+X = dataset.iloc[:,0:4].values
+Y = dataset.iloc[:,4].values
+
+# Divisão do dataset em treino e teste
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.3, random_state=3)
+
+# Padronização dos dados
+standard = StandardScaler()
+X_train = standard.fit_transform(X_train)
+X_test = standard.fit_transform(X_test)
+
+# Classificador KNN
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, Y_train)
+
+# Predição
+result = knn.predict(X_test)
+cm = confusion_matrix(Y_test, result)
+accuracy = accuracy_score(Y_test, result)
+print(f"Matriz de Confusão: {cm}")
+print(f"Acurácia do Modelo: {accuracy}")
