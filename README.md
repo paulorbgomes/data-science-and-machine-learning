@@ -1,5 +1,5 @@
 # data-science-and-machine-learning
- Estudos sobre Data Science e Machine Learning em python.
+ Estudos sobre Data Science e Machine Learning em Python.
  * **Referências Bibliográficas:**
    1. [Python para Engenheiros e Cientistas - Rafael da Silva](https://www.udemy.com/course/python-para-engenheiros-e-cientistas/?kw=python+para+engenheiros&src=sac&couponCode=LETSLEARNNOWPP)
    2. [Python para DS e ML - Amílcar Netto](https://www.amazon.com.br/Python-Para-Data-Science-Descomplicado/dp/6555203374)
