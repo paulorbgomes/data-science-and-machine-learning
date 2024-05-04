@@ -1,0 +1,1 @@
+Crie uma funcao que le um arquivo de extensao .txt e retorne quantas palavras em esse arquivo. Dica: utilize o metodo readlines().
