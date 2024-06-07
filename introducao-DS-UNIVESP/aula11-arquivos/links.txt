@@ -1,0 +1,14 @@
+- Fontes de Dados
+- Kaggle
+https://www.kaggle.com/datasets
+- Dados Governo Brasileiro
+https://dados.gov.br/dataset
+- Instituto Johns Hopkins
+https://github.com/govex/COVID-19/tree/master/data_tables/vaccine_data
+- UCI Machine Learning
+https://archive.ics.uci.edu/ml/datasets.php
+- Datasets no Github
+https://github.com/awesomedata/awesome-public-datasets
+
+- APIs
+https://randomuser.me/api
