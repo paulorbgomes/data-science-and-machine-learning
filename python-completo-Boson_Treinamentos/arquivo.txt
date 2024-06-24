@@ -1,0 +1,11 @@
+Em sistemas operacionais, um arquivo de dispositivo, 
+ou arquivo especial, é uma interface para um driver 
+de dispositivo que aparece em um sistema de arquivos 
+como se fosse um arquivo comum. Eles são comumente 
+utilizados em sistemas operacionais do tipo Unix e 
+também são encontrados no MS-DOS, OS/2 e Microsoft Windows. 
+Os arquivos de dispositivo permitem que o software interaja 
+com um driver de dispositivo utilizando as chamadas de 
+sistema (system calls) padronizadas de entrada/saída, o que 
+simplifica muitas tarefas e unifica mecanismos de E/S de 
+espaço do usuário.
