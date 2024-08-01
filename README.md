@@ -13,3 +13,4 @@
    10. [Mineração de Dados - UNIVESP](https://www.youtube.com/playlist?list=PL1nZ-4v6j0C-x2zwXGyAWpHob3GwphIjS)
    11. [Visualização Computacional - UNIVESP](https://www.youtube.com/watch?v=xh_AwDoljwg&list=PLJciBcoAj8nPm_Rc6YCsMRpxy3RrMdMoN)
    12. [Aprendizado de Máquinas - UNIVESP](https://www.youtube.com/playlist?list=PLVYKJqnvllt_H_alEiwTW9o9T112oSP7-)
+   13. [Redes Neurais - UNIVESP](https://www.youtube.com/playlist?list=PLxI8Can9yAHfB2om9dqhsrsjRAf-YJaro)
