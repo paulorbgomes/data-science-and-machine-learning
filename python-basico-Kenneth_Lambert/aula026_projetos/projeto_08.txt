@@ -1,0 +1,4 @@
+Programação em Python
+FST com JavaScript
+Ciência de Dados com Python
+Machine Learning com Python
